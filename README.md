@@ -1,2 +1,2 @@
-# pulp
-A minimal command line task manager for php projects
+# task
+A minimal command line task runner for php projects
