@@ -19,8 +19,9 @@ register_shutdown_function( function() {
 	} else {
 		if($key == '') {
 			echo "No default task available.";
+		} else {
+			echo "Task does not exist: $key.\n";
 		}
-		echo "Task does not exist: $key.\n";
 	}
 });
 
