@@ -16,6 +16,7 @@ register_shutdown_function( function() {
 
 	if(isset($tasks[$key])) {
 		echo "Running $key.\n";
+		$tasks[$key]();
 	} else {
 		if($key == '') {
 			echo "No default task available.";
