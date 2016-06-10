@@ -9,10 +9,16 @@
         }
     ],
 	"autoload": {
-		"files": [ "init.php" ]
+		"files": [ "init.php" ],
+		"psr-4": {
+			"Pulp\\": "src/"
+		}
     },
 	"autoload-dev": {
-		"files": [ "init.php" ]
+		"files": [ "init.php" ],
+		"psr-4": {
+			"Pulp\\": "src/"
+		}
     },
     "minimum-stability": "dev",
     "require": {}
