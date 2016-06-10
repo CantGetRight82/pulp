@@ -14,6 +14,17 @@ register_shutdown_function( function() {
 		$key = $args[1];
 	}
 
+	runtask($key);
+
+});
+
+function task($key, $handler) {
+	global $tasks;
+	$tasks[$key] = $handler;
+}
+
+function runtask($key) {
+	global $tasks;
 	if(isset($tasks[$key])) {
 		echo "Running $key.\n";
 		$tasks[$key]();
@@ -24,12 +35,12 @@ register_shutdown_function( function() {
 			echo "Task does not exist: $key.\n";
 		}
 	}
-});
-
-function task($key, $handler) {
-	global $tasks;
-	$tasks[$key] = $handler;
 }
+
+function run($key) {
+	return new TaskRunTask($key);
+}
+
 
 function scope($from, $to, $tasks) {
 	foreach($tasks as $task) {
