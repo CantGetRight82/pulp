@@ -1,5 +1,5 @@
 {
-    "name": "cantgetright82/pulp",
+    "name": "cantgetright82/task",
     "description": "A minimal command line task runner for php projects",
     "license": "Apache-2.0",
     "authors": [
@@ -11,13 +11,13 @@
 	"autoload": {
 		"files": [ "init.php" ],
 		"psr-4": {
-			"Pulp\\": "src/"
+			"Task\\": "src/"
 		}
     },
 	"autoload-dev": {
 		"files": [ "init.php" ],
 		"psr-4": {
-			"Pulp\\": "src/"
+			"Task\\": "src/"
 		}
     },
     "minimum-stability": "dev",

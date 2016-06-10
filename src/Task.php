@@ -1,8 +1,8 @@
 <?php
 
-namespace Pulp;
+namespace Task;
 
-abstract class PulpTask {
+abstract class Task {
 	public function __construct($from, $to) {
 		$this->from = $from;
 		$this->to = $to;

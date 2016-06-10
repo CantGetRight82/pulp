@@ -1,8 +1,8 @@
 <?php
 
-namespace Pulp;
+namespace Task;
 
-class PulpTaskFileCopy extends PulpTask {
+class TaskFileCopy extends Task {
 	public $rename = null;
 	public function execute($from, $to) {
 		$filename = $this->rename;

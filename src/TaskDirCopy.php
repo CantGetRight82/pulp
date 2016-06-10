@@ -1,8 +1,8 @@
 <?php
 
-namespace Pulp;
+namespace Task;
 
-class PulpTaskDirCopy extends PulpTask {
+class TaskDirCopy extends Task {
 	public function execute($from, $to) {
 		$this->announce('dircopy', $from, $to);
 
