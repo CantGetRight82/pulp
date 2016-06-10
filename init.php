@@ -2,12 +2,10 @@
 
 namespace Task;
 
-
 $tasks = array();
 
 function task($command, $handler) {
 	global $tasks;
-
 	$tasks[$command] = $handler;
 }
 
