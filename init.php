@@ -5,13 +5,28 @@ namespace Task;
 $tasks = array();
 
 register_shutdown_function( function() {
-	var_dump($GLOBALS['argv']);
+	global $tasks;
+
+	$key = '';
+	$args = $GLOBALS['argv'];
+
+	if(count($args)>1) {
+		$key = $args[1];
+	}
+
+	if(isset($tasks[$key])) {
+		echo "Running $key.\n";
+	} else {
+		if($key == '') {
+			echo "No default task available.";
+		}
+		echo "Task does not exist: $key.\n";
+	}
 });
 
-function task($command, $handler) {
+function task($key, $handler) {
 	global $tasks;
-	$tasks[$command] = $handler;
-
+	$tasks[$key] = $handler;
 
 	echo 'test1';
 }
