@@ -1,5 +1,6 @@
 <?php
 
+namespace Task;
 
 class TaskScope {
 	public function __construct($from, $to, $tasks) {
