@@ -1,0 +1,19 @@
+{
+    "name": "cantgetright82/pulp",
+    "description": "A minimal command line task runner for php projects",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Rinke van den Berg",
+            "email": "cantgetright82@gmail.com"
+        }
+    ],
+	"autoload": {
+		"files": [ "init.php" ]
+    },
+	"autoload-dev": {
+		"files": [ "init.php" ]
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
