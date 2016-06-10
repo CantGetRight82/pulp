@@ -28,8 +28,6 @@ register_shutdown_function( function() {
 function task($key, $handler) {
 	global $tasks;
 	$tasks[$key] = $handler;
-
-	echo 'test1';
 }
 
 function scope($from, $to, $tasks) {
