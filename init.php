@@ -7,6 +7,9 @@ $tasks = array();
 function task($command, $handler) {
 	global $tasks;
 	$tasks[$command] = $handler;
+
+
+	echo 'test';
 }
 
 function scope($from, $to, $tasks) {
