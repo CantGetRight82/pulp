@@ -9,7 +9,7 @@ function task($command, $handler) {
 	$tasks[$command] = $handler;
 
 
-	echo 'test';
+	echo 'test1';
 }
 
 function scope($from, $to, $tasks) {
