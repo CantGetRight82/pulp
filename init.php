@@ -18,16 +18,20 @@ register_shutdown_function( function() {
 
 });
 
-function task($key, $handler) {
+function task($key, $handlers) {
 	global $tasks;
-	$tasks[$key] = $handler;
+	$tasks[$key] = $handlers;
 }
 
 function runtask($key) {
 	global $tasks;
 	if(isset($tasks[$key])) {
 		echo "Running $key.\n";
-		$tasks[$key]();
+
+		$arr = $tasks[$key];
+		foreach($arr as $func) {
+			$func();
+		}
 	} else {
 		if($key == '') {
 			echo "No default task available.";
@@ -43,9 +47,7 @@ function run($key) {
 
 
 function scope($from, $to, $tasks) {
-	foreach($tasks as $task) {
-		$task->run($from, $to);
-	}
+	return new TaskScope($from, $to, $tasks);
 }
 
 
