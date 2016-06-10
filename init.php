@@ -30,7 +30,7 @@ function runtask($key) {
 
 		$arr = $tasks[$key];
 		foreach($arr as $func) {
-			$func();
+			call_user_func( $func );
 		}
 	} else {
 		if($key == '') {
