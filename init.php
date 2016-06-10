@@ -4,8 +4,8 @@ namespace Task;
 
 $tasks = array();
 
+	var_dump($argv);
 register_shutdown_function( function() {
-	var_dump(\$argv);
 });
 
 function task($command, $handler) {
