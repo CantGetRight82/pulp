@@ -3,8 +3,13 @@
 namespace Task;
 
 class TaskFileCopy extends Task {
-	public $rename = null;
-	public function execute($from, $to) {
+	private $rename = null;
+	public function __construct($from, $to, $rename = null) {
+		parent::__construct(null, $from,  $to);
+		$this->rename = $rename;
+	}
+	public function execute($parent) {
+		list($from, $to) = $this->getScope($parent);
 		$filename = $this->rename;
 		if($filename === null) {
 			$filename = basename($from);

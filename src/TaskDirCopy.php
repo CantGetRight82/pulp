@@ -3,7 +3,11 @@
 namespace Task;
 
 class TaskDirCopy extends Task {
-	public function execute($from, $to) {
+	public function __construct($from, $to) {
+		parent::__construct(null, $from,  $to);
+	}
+	public function execute($parent) {
+		list($from, $to) = $this->getScope($parent);
 		$this->announce('dircopy', $from, $to);
 
 		$found = shell_exec( 'find '.escapeshellarg($from) );
@@ -22,5 +26,4 @@ class TaskDirCopy extends Task {
 			}
 		}
 	}
-
 }

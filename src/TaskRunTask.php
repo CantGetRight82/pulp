@@ -7,7 +7,7 @@ class TaskRunTask extends Task {
 		$this->key = $key;
 	}
 
-	public function execute($from, $to) {
+	public function execute($parent) {
 		runtask($this->key);
 	}
 
