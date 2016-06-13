@@ -27,6 +27,11 @@ function filecopy($from, $to, $rename = null) {
 	return $task;
 }
 
+function less($from, $to) {
+	return new TaskLess($from, $to);
+}
+
+
 
 $tasks = array();
 register_shutdown_function( function() {
