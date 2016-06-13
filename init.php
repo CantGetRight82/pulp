@@ -3,8 +3,21 @@
 namespace Task;
 
 
+$tasks = null;
 function task($key, $handlers) {
 	global $tasks;
+	if($tasks === null) {
+		register_shutdown_function( function() use ($tasks) {
+			$key = '';
+			$args = $GLOBALS['argv'];
+			if(count($args)>1) {
+				$key = $args[1];
+			}
+
+			runtask($key);
+		});
+
+	}
 	$task = new Task($handlers);
 	$tasks[$key] = $task;
 	return $task;
@@ -31,20 +44,6 @@ function less($from, $to) {
 	return new TaskLess($from, $to);
 }
 
-
-
-$tasks = array();
-register_shutdown_function( function() {
-	global $tasks;
-
-	$key = '';
-	$args = $GLOBALS['argv'];
-	if(count($args)>1) {
-		$key = $args[1];
-	}
-
-	runtask($key);
-});
 
 function runtask($key) {
 	global $tasks;
